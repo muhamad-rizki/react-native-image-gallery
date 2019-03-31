@@ -280,7 +280,7 @@ export default class Gallery extends PureComponent {
         const flatListProps = { ...DEFAULT_FLAT_LIST_PROPS, ...this.props.flatListProps };
 
         return (
-            <View>
+            <View style={{ flex: 1, ...this.props.parentStyle }}>
                 <ViewPager
                     {...this.props}
                     flatListProps={flatListProps}
