@@ -25,7 +25,8 @@ export default class Gallery extends PureComponent {
         removeClippedSubviews: PropTypes.bool,
         imageComponent: PropTypes.func,
         errorComponent: PropTypes.func,
-        flatListProps: PropTypes.object
+        flatListProps: PropTypes.object,
+        renderPage: PropTypes.func
     };
 
     static defaultProps = {
@@ -230,7 +231,8 @@ export default class Gallery extends PureComponent {
     }
 
     renderPage(pageData, pageId) {
-        const { onViewTransformed, onTransformGestureReleased, errorComponent, imageComponent, enableTransform } = this.props;
+        const { onViewTransformed, onTransformGestureReleased, errorComponent, imageComponent, enableTransform, renderPage } = this.props;
+        if (renderPage) return renderPage(pageData, pageId);
         return (
             <TransformableImage
                 onViewTransformed={((transform) => {
