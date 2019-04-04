@@ -290,7 +290,7 @@ export default class Gallery extends PureComponent {
                     scrollViewStyle={this.props.scrollViewStyle}
                     scrollEnabled={false}
                     renderPage={this.renderPage}
-                    pageDataArray={images)}
+                    pageDataArray={images}
                     {...gestureResponder}
                     onPageSelected={this.onPageSelected}
                     onPageScrollStateChanged={this.onPageScrollStateChanged}
